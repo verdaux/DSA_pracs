@@ -44,4 +44,5 @@ public class LeadersInArray
                 System.out.println(arr[i] +" ");
         }
     }
+
 }
