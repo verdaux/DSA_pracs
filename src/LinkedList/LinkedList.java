@@ -14,8 +14,21 @@ public class LinkedList
         length = 1;
     }
 
-    public void append()
-    {}
+    public void append(int val)
+    {
+        Node newNode = new Node(val);
+        if(length==0)
+        {
+            head=newNode;
+            tail=newNode;
+        }
+        else
+        {
+            tail.next=newNode;
+            tail = newNode;
+        }
+        length++;
+    }
 
     public void prepend()
     {}
@@ -26,26 +39,27 @@ public class LinkedList
     public void printLL()
     {
         Node temp = head;
-
+        System.out.println("\n Printing LinkedList ::");
         while (temp != null)
         {
             System.out.println(temp.value);
             temp = temp.next;
         }
+        System.out.println("\n");
     }
 
     public void getHead()
     {
-        System.out.println(head.value);
+        System.out.println("Head is :: "+head.value);
     }
 
     public void getTail()
     {
-        System.out.println(tail.value);
+        System.out.println("Tail is :: "+tail.value);
     }
 
     public void getLength()
     {
-        System.out.println(length);
+        System.out.println("Total length of the LinkedList is:: "+length);
     }
 }

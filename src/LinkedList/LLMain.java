@@ -4,14 +4,17 @@ public class LLMain
 {
     public static void main(String[] args)
     {
-        LinkedList myLL = new LinkedList(4);
+        LinkedList myLL = new LinkedList(1);
+
+        myLL.append(2);
+
         myLL.getHead();
         myLL.getTail();
         myLL.getLength();
         myLL.printLL();
 
         LLMain lll = new LLMain();
-        lll.equalsChecker();
+        //lll.equalsChecker();
     }
 
     public void equalsChecker()
