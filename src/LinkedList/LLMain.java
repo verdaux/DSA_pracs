@@ -13,6 +13,10 @@ public class LLMain
         myLL.getLength();
         myLL.printLL();
 
+        System.out.println("removed value is :: "+myLL.removeLast().value);
+        System.out.println("removed value is :: "+myLL.removeLast().value);
+        System.out.println("removed value is :: "+myLL.removeLast());
+
         LLMain lll = new LLMain();
         //lll.equalsChecker();
     }
