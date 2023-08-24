@@ -57,8 +57,19 @@ public class LinkedList
 
     }
 
-    public void prepend()
-    {}
+    public void prepend(int val)
+    {
+        Node firstNode = new Node(val);
+        if(length==0)
+        {
+            tail=firstNode;
+            head=firstNode;
+        }
+
+        firstNode.next = head;
+        head = firstNode;
+    length++;
+    }
 
     public void insert()
     {}
