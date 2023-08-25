@@ -73,6 +73,38 @@ public class LinkedList
     length++;
     }
 
+    public Node removeFirstAlt()
+    {
+        if(length==0)
+        {return null;}
+        Node temp = head;
+        head = head.next;
+        temp.next=null;
+        length--;
+        if(length==0)
+        {tail= null;}
+        return temp;
+    }
+
+    public Node removeFirst()
+    {
+        if(length==0)
+        {
+            return null;
+        }
+        else if(length==1)
+        {
+            head=null;
+            tail=null;
+            length--;
+        }
+        else
+        {head = head.next;
+            length--;
+        }
+        return head;
+    }
+
     public void insert()
     {}
 
@@ -90,12 +122,12 @@ public class LinkedList
 
     public void getHead()
     {
-        System.out.println("Head is :: "+head.value);
+        System.out.println(length==0?"Head is empty":"Head is :: "+head.value);
     }
 
     public void getTail()
     {
-        System.out.println("Tail is :: "+tail.value);
+        System.out.println(length==0?"Tail is empty":"Tail is :: "+tail.value);
     }
 
     public void getLength()
