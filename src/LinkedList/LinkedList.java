@@ -65,9 +65,11 @@ public class LinkedList
             tail=firstNode;
             head=firstNode;
         }
-
-        firstNode.next = head;
-        head = firstNode;
+        else
+        {
+            firstNode.next = head;
+            head = firstNode;
+        }
     length++;
     }
 

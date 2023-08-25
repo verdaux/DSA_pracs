@@ -6,17 +6,20 @@ public class LLMain
     {
         LinkedList myLL = new LinkedList(1);
 
-        myLL.append(2);
+        //myLL.append(2);
 
         myLL.getHead();
         myLL.getTail();
         myLL.getLength();
         myLL.printLL();
-
+        System.out.println("removed value is :: "+myLL.removeLast().value);
+        /*
         System.out.println("removed value is :: "+myLL.removeLast().value);
         System.out.println("removed value is :: "+myLL.removeLast().value);
         System.out.println("removed value is :: "+myLL.removeLast());
-
+        */
+        myLL.prepend(3);
+        myLL.printLL();
         LLMain lll = new LLMain();
         //lll.equalsChecker();
     }
