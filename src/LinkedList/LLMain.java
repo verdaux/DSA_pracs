@@ -5,7 +5,13 @@ public class LLMain
     public static void main(String[] args)
     {
         LinkedList myLL = new LinkedList(1);
-        myLL.getHead();
+        myLL.append(2);
+        myLL.append(3);
+        myLL.append(4);
+        myLL.append(5);
+        myLL.printLL();
+        System.out.println(" value at index is :: "+myLL.get(1).value);
+        /*myLL.getHead();
         myLL.getTail();
         myLL.getLength();
         myLL.printLL();
@@ -14,15 +20,15 @@ public class LLMain
         myLL.getHead();
         myLL.getTail();
         myLL.getLength();
-        myLL.printLL();
+        myLL.printLL();*/
         //System.out.println("removed value is :: "+myLL.removeFirst().value);
-        System.out.println("removed value is :: "+myLL.removeFirstAlt().value);
+        //System.out.println("removed value is :: "+myLL.removeFirstAlt().value);
         /*
         System.out.println("removed value is :: "+myLL.removeLast().value);
         System.out.println("removed value is :: "+myLL.removeLast().value);
         System.out.println("removed value is :: "+myLL.removeLast());
         */
-        myLL.prepend(3);
+        /*myLL.prepend(3);
         myLL.getHead();
         myLL.getTail();
         myLL.getLength();
@@ -36,7 +42,7 @@ public class LLMain
         myLL.getHead();
         myLL.getTail();
         myLL.getLength();
-        myLL.printLL();
+        myLL.printLL();*/
         LLMain lll = new LLMain();
         //lll.equalsChecker();
     }

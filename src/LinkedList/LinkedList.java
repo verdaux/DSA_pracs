@@ -105,6 +105,26 @@ public class LinkedList
         return head;
     }
 
+    public Node get(int index)
+    {
+        Node indexNode = head;
+        if(index<0 || index>length)
+        {
+            return null;
+        }
+        else
+        {
+            for (int i = 0; i <index;i++)
+            {
+                indexNode = indexNode.next;
+            }
+
+        }
+
+
+        return indexNode;
+    }
+
     public void insert()
     {}
 
