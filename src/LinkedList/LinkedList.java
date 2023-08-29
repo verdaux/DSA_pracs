@@ -125,6 +125,27 @@ public class LinkedList
         return indexNode;
     }
 
+    public boolean set(int index, int val)
+    {
+        Node temp = head;
+        if(index<0 || index>length)
+        {
+            return false;
+        }
+        else
+        {
+            for (int i = 0; i < index; i++)
+            {
+                temp = temp.next;
+                if(i==(index-1))
+                {
+                    temp.value = val;
+                }
+            }
+        }
+        return true;
+    }
+
     public void insert()
     {}
 

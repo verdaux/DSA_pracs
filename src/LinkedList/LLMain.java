@@ -10,7 +10,9 @@ public class LLMain
         myLL.append(4);
         myLL.append(5);
         myLL.printLL();
-        System.out.println(" value at index is :: "+myLL.get(1).value);
+        System.out.println(" value at index is :: "+myLL.set(1,10));
+        myLL.printLL();
+        //System.out.println(" value at index is :: "+myLL.get(1).value);
         /*myLL.getHead();
         myLL.getTail();
         myLL.getLength();
