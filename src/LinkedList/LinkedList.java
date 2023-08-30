@@ -146,8 +146,38 @@ public class LinkedList
         return true;
     }
 
-    public void insert()
-    {}
+    public boolean insert(int index, int val)
+    {
+        if(index<0 || index>length)
+        {return false;}
+
+        else if (index==0)
+        {
+            prepend(val);
+            return true;
+        }
+        else if (index==length)
+        {
+            append(val);
+            return true;
+        }
+        else
+        {
+            Node newNode = new Node(val);
+            Node temp = head;
+            for (int i = 0; i < (index-1); i++)
+            {
+                temp = temp.next;
+            }
+            newNode.next = temp.next ;
+            temp.next = newNode;
+            length++;
+
+            return true;
+        }
+
+
+    }
 
     public void printLL()
     {
