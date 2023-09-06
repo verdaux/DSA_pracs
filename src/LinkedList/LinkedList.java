@@ -216,6 +216,24 @@ public class LinkedList
         System.out.println("\n");
     }
 
+    public void reverse()
+    {
+        Node temp = head;
+        head = tail;
+        tail = temp;
+
+        Node after = temp.next;
+        Node before = null;
+
+        for (int i = 0 ; i <length;i++)
+        {
+            after = temp.next;
+            temp.next = before;
+            before = temp;
+            temp = after;
+        }
+    }
+
     public void getHead()
     {
         System.out.println(length==0?"Head is empty":"Head is :: "+head.value);

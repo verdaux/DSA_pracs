@@ -10,7 +10,9 @@ public class LLMain
         myLL.append(4);
         myLL.append(5);
         myLL.printLL();
-        System.out.println(" new value removed at index is :: "+myLL.remove(3).value);
+        System.out.println("  values reversed :: ");
+        myLL.reverse();
+        //System.out.println(" new value removed at index is :: "+myLL.remove(3).value);
         //System.out.println(" new value inserted at index is :: "+myLL.insert(1,10));
         //System.out.println(" value at index is :: "+myLL.set(1,10));
         myLL.printLL();
