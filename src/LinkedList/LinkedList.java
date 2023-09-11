@@ -132,6 +132,11 @@ public class LinkedList
         {
             return false;
         }
+        else if(index==0)
+        {
+            prepend(val);
+            //return true;
+        }
         else
         {
             for (int i = 0; i < index; i++)
