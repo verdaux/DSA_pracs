@@ -86,4 +86,50 @@ public class LinkedList
             return temp;
         }
     }
+
+    public void append(int value)
+    {
+        Node newNode = new Node(value);
+        if(length==0)
+        {
+            head = newNode;
+            tail = newNode;
+        }
+        else
+        {
+            tail.next = newNode;
+            tail = newNode;
+        }
+        length++;
+    }
+
+    public Node removeLast()
+    {
+        Node prev = head;
+        if (length==0)
+        {
+            return null;
+        }
+        else if (length==1)
+        {
+            head = null;
+            tail = null;
+            length=0;
+            return prev;
+        }
+        else
+        {
+            Node temp = head.next;
+
+            while(temp.next!=null)
+            {
+                prev = temp;
+                temp = temp.next;
+            }
+            tail = prev;
+            tail.next=null;
+            length--;
+            return temp;
+        }
+    }
 }
