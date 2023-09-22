@@ -34,6 +34,7 @@ public class Main
         */
 
         //invoking append and remove last code
+        /*
         ll.append(2);
         ll.printAll();
         ll.append(3);
@@ -46,6 +47,16 @@ public class Main
         System.out.println("Only value removed:: "+ll.removeLast().value);
         ll.printAll();
         System.out.println("Empty list removed:: "+ll.removeLast());
+        ll.printAll();
+         */
+
+        //invoking get and set
+        ll.append(2);
+        ll.append(3);
+        ll.printAll();
+
+        //System.out.println("get element:: "+ll.get(10).value);
+        System.out.println("set element:: "+ll.set(0,35));
         ll.printAll();
     }
 }

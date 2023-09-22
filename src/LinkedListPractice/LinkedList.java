@@ -132,4 +132,54 @@ public class LinkedList
             return temp;
         }
     }
+
+    public Node get(int index)
+    {
+        if(index<0 || index>length)
+        {
+            return null;
+        }
+        else
+        {
+            Node temp = head;
+            for (int i=0;i<index;i++)
+            {
+                temp = temp.next;
+            }
+            return temp;
+        }
+    }
+
+    public boolean set(int index, int value)
+    {
+        if(index<0 || index>length)
+        {
+            return false;
+        }
+        else if (length==0)
+        {
+            prepend(value);
+            return true;
+        }
+        else if (index==0)
+        {
+                head.value = value;
+                return true;
+        }
+        else
+        {
+            Node temp = head;
+
+
+            for (int i=0;i<index;i++)
+            {
+                temp = temp.next;
+                if(i == index-1)
+                {
+                    temp.value = value;
+                }
+            }
+            return true;
+        }
+    }
 }
