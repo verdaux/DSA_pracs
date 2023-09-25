@@ -46,7 +46,7 @@ public class LinkedList
         }
         else
         {
-            System.out.println("The head element has value:: "+getHead().value);
+            System.out.println("\nThe head element has value:: "+getHead().value);
             System.out.println("The tail element has value:: "+getTail().value);
             System.out.println("The length of the linked list is:: "+getLength());
 
@@ -180,6 +180,74 @@ public class LinkedList
                 }
             }
             return true;
+        }
+    }
+
+    public boolean insert(int index, int value)
+    {
+        if (length==0)
+        {
+            prepend(value);
+            return  true;
+        }
+        else if(index<0 || index>length)
+        {
+            return  false;
+        }
+        else if (index==length)
+        {
+            append(value);
+            return true;
+        }
+        else
+        {
+            Node newNode = new Node(value);
+            Node temp = head;
+            for(int i = 0; i < (index-1); i++)
+            {
+                temp = temp.next;
+            }
+            newNode.next = temp.next;
+            temp.next = newNode;
+            length++;
+            return true;
+        }
+
+    }
+
+    public Node remove(int index)
+    {
+        if (length==0)
+        {
+            return null;
+        }
+        else if(index<0 || index>=length)
+        {
+            return  null;
+        }
+        else if (index==0)
+        {
+            return removeFirst();
+        }
+        else if (index==length-1)
+        {
+            return removeLast();
+        }
+        else
+        {
+            Node prev = head;
+            Node temp = head.next;
+
+            for(int i = 0; i < (index-1); i++)
+            {
+                prev = temp;
+                temp = temp.next;
+            }
+            prev.next = temp.next;
+            //prev = temp;
+            temp.next = null;
+            length--;
+            return temp;
         }
     }
 }
