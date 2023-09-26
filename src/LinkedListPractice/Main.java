@@ -62,21 +62,32 @@ public class Main
          */
 
         //invoking insert and remove
+        /*
         ll.append(2);
         ll.append(3);
         ll.append(4);
         ll.printAll();
-        /*
+
         ll.insert(0,10);
         ll.printAll();
         ll.insert(3,25);
         ll.printAll();
-         */
+
         System.out.println("removed value is:: "+ll.remove(1).value);
         System.out.println("removed value is:: "+ll.remove(1).value);
         System.out.println("removed value is:: "+ll.remove(1).value);
         System.out.println("removed last value:: "+ll.remove(0).value);
         System.out.println("removed from empty list:: "+ll.remove(0));
         ll.printAll();
+         */
+
+        ll.append(2);
+        ll.append(3);
+        ll.append(4);
+        ll.printAll();
+        ll.reverse();
+        System.out.println("After reverse");
+        ll.printAll();
+
     }
 }

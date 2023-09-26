@@ -250,4 +250,22 @@ public class LinkedList
             return temp;
         }
     }
+
+    public void reverse()
+    {
+        Node temp = head;
+        head = tail;
+        tail = temp;
+
+        Node before = null;
+        Node after = temp.next;
+
+        while(temp!=null)
+        {
+            after = temp.next;
+            temp.next = before;
+            before = temp;
+            temp = after;
+        }
+    }
 }
