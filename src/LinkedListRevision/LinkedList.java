@@ -79,7 +79,7 @@ public class LinkedList
     public Node removeLast()
     {
         Node prev = head;
-        Node temp = head.next;
+        Node temp = head;
         if(length == 1)
         {
             temp = prev;

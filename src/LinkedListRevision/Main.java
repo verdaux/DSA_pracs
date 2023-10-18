@@ -18,5 +18,8 @@ public class Main
 
         System.out.println("The removed last element is :: "+ll.removeLast().value);
         ll.printAll();
+
+        System.out.println("The removed last element is :: "+ll.removeLast());
+        ll.printAll();
     }
 }
