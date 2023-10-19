@@ -1,4 +1,4 @@
-package LinkedListRevision;
+package LeetCodeProblems.LinkedList;
 
 public class LinkedList
 {
@@ -103,5 +103,44 @@ public class LinkedList
             System.out.println("The list is empty so remove operation is skipped!");
         }
         return temp;
+    }
+
+    public Node findMiddleNode()
+    {
+
+            Node slow = head;
+            Node fast = head;
+
+            while(
+                    (fast!=null)
+                    &&
+                    (fast.next != null)
+            )
+            {
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+
+        return slow;
+    }
+
+    public boolean hasLoop()
+    {
+        Node slow = head;
+        Node fast = head;
+
+        while (
+                (fast != null)
+                        &&
+                        (fast.next != null)
+        )
+        {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (slow == fast)
+                return true;
+        }
+        return false;
     }
 }
