@@ -1,5 +1,8 @@
 package LeetCodeProblems.LinkedList;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class LinkedList
 {
     private Node head;
@@ -210,5 +213,46 @@ public class LinkedList
         prev2.next = null;
         prev1.next = dummy2.next;
         head = dummy1.next;
+    }
+
+    public void removeDupes()
+    {
+        Set<Integer> values = new HashSet<Integer>();
+        Node current = head;
+        Node prev = null;
+        while (current!=null)
+        {
+            if(values.contains(current.value))
+            {
+                prev.next = current.next;
+            }
+            else
+            {
+                values.add(current.value);
+                prev = current;
+            }
+            current = current.next;
+        }
+    }
+    public void removeDuplicates()
+    {
+        Node curr = head;
+        while (curr!=null)
+        {
+            Node runner = curr;
+            while (runner.next!=null)
+            {
+                if (runner.next.value == curr.value)
+                {
+                    runner.next = runner.next.next;
+                    length--;
+                }
+                else
+                {
+                    runner = runner.next;
+                }
+            }
+            curr = curr.next;
+        }
     }
 }
