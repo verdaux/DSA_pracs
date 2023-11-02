@@ -11,6 +11,7 @@ public class Main
         ll.append(3);
         ll.append(4);
         ll.printAll();
-        System.out.println("The middle node has value:: "+ll.findMiddleNode().value);
+        //System.out.println("The middle node has value:: "+ll.findMiddleNode().value);
+        System.out.println("The kth element from end for value is :: "+ll.findKthFromEnd(1).value);
     }
 }
