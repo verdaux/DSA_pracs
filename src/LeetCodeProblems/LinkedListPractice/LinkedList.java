@@ -66,4 +66,33 @@ public class LinkedList
         }
         length++;
     }
+    /*
+    * Implement a method called findMiddleNode that returns the middle node of the linked list.
+      If the list has an even number of nodes, the method should return the second middle node.
+     */
+    public Node findMiddleNode()
+    {
+
+        if (length>1)
+        {
+            Node fast = head;
+            Node slow = head;
+
+            while (fast!=null && fast.next!=null)
+            {
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+
+            return slow;
+        }
+        else if (length==1)
+        {
+            return head;
+        }
+        else
+        {
+            return null;
+        }
+    }
 }
