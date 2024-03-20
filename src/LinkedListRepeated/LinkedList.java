@@ -7,14 +7,14 @@ public class LinkedList
 
     private int length;
 
-    public int getHead()
+    public Node getHead()
     {
-        return head.value;
+        return head;
     }
 
-    public int getTail()
+    public Node getTail()
     {
-        return tail.value;
+        return tail;
     }
 
     public int getLength()
@@ -32,16 +32,60 @@ public class LinkedList
     public void printList()
     {
         System.out.println("\nThe length of the LinkedList is:: "+getLength());
-        System.out.println("\nThe head node has the value:: "+getHead());
-        System.out.println("\nThe tail node has the value:: "+getTail());
-        System.out.println("\nThe LinkedList has below value(s)::"+getTail());
+        System.out.println("\nThe head node has the value:: "+(getHead()==null?"No header":getHead().value));
+        System.out.println("\nThe tail node has the value:: "+(getTail()==null?"No Tail":getTail().value));
+        System.out.println("\nThe LinkedList has below value(s)::\n");
 
         Node temp = head;
-        while (temp!=tail.next)
+
+        while (temp!=null)
         {
-            System.out.println(head.value);
+            System.out.println(temp.value);
             temp = temp.next;
         }
         System.out.println("\n");
+    }
+
+    public void append(int lastVal)
+    {
+        Node lastNode = new Node(lastVal);
+
+        if (length>0)
+        {
+            tail.next = lastNode;
+        }
+        else
+            head = lastNode;
+
+        tail = lastNode;
+        length++;
+    }
+
+    public void removeLast()
+    {
+        if (head==tail)
+        {
+            head = null;
+            tail = null;
+            length=0;
+        }
+        else if (length>1)
+        {
+            Node prev = head;
+            Node temp = head.next;
+
+            while (temp.next == tail)
+            {
+                prev = prev.next;
+                temp = temp.next;
+            }
+            tail = prev;
+            tail.next = null;
+            length--;
+        }
+        else if (length==0)
+        {
+            System.out.println("Nothing to remove");
+        }
     }
 }
