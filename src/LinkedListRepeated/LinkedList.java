@@ -88,4 +88,72 @@ public class LinkedList
             System.out.println("Nothing to remove");
         }
     }
+
+    public void addMiddle(int index, int value)
+    {
+        Node midNode = new Node(value);
+
+        if (length==0)
+        {
+            head = midNode;
+            tail = midNode;
+        }
+        else
+        {
+            Node temp = head.next;
+
+            for (int i = 0; i < (index-1);i++)
+            {
+                temp = temp.next;
+            }
+            midNode.next = temp.next;
+            temp.next = midNode;
+            length++;
+        }
+    }
+
+    public void prepend(int value)
+    {
+        Node firstNode = new Node(value);
+
+        if(length==0)
+        {
+            head = firstNode;
+            tail = firstNode;
+        }
+        else
+        {
+            firstNode.next = head;
+            head = firstNode;
+        }
+        length++;
+    }
+
+    public Node removeFirst()
+    {
+        Node temp = head;
+        if (length==0)
+        {
+            return null;
+        }
+        else if (length==1)
+        {
+            head = null;
+            tail = null;
+            length=0;
+            return temp;
+        }
+        else if (length==2)
+        {
+            head = tail;
+            length=1;
+            return temp;
+        }
+        else
+        {
+            head = head.next;
+            length--;
+            return temp;
+        }
+    }
 }

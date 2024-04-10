@@ -10,7 +10,18 @@ public class Main
         ll.append(2);
         ll.append(3);
         ll.printList();
-        ll.removeLast();
+        //ll.removeLast();
+        //ll.printList();
+        //ll.addMiddle(1,8);
+        /*ll.prepend(0);
+        ll.printList();
+        ll.prepend(17);
+        ll.printList();*/
+        ll.removeFirst();
+        ll.printList();
+        ll.removeFirst();
+        ll.printList();
+        ll.removeFirst();
         ll.printList();
     }
 }
