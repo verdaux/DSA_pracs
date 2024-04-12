@@ -61,8 +61,9 @@ public class LinkedList
         length++;
     }
 
-    public void removeLast()
+    public Node removeLast()
     {
+        Node prev = head;
         if (head==tail)
         {
             head = null;
@@ -71,7 +72,7 @@ public class LinkedList
         }
         else if (length>1)
         {
-            Node prev = head;
+
             Node temp = head.next;
 
             while (temp.next == tail)
@@ -87,6 +88,7 @@ public class LinkedList
         {
             System.out.println("Nothing to remove");
         }
+        return prev;
     }
 
     public void addMiddle(int index, int value)
@@ -155,5 +157,32 @@ public class LinkedList
             length--;
             return temp;
         }
+    }
+
+    public Node remove(int index)
+    {
+        if (index==0)
+        {
+            return  removeFirst();
+        }
+        else if (index==length-1)
+        {
+            return removeLast();
+        }
+        else if (length>2)
+        {
+            Node prev = head;
+            Node temp = head;
+            for (int i=0; i < index; i++)
+            {
+                prev = temp;
+                temp = temp.next;
+            }
+            prev.next = temp.next;
+            length--;
+            return temp;
+        }
+        else
+            return null;
     }
 }

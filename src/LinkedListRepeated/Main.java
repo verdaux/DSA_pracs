@@ -17,11 +17,17 @@ public class Main
         ll.printList();
         ll.prepend(17);
         ll.printList();*/
-        ll.removeFirst();
+        /*ll.removeFirst();
         ll.printList();
         ll.removeFirst();
         ll.printList();
         ll.removeFirst();
+        ll.printList();*/
+        System.out.println("The removed Node is:: "+ll.remove(0).value);
+        ll.printList();
+        System.out.println("The removed Node is:: "+ll.remove(0).value);
+        ll.printList();
+        System.out.println("The removed Node is:: "+ll.remove(0).value);
         ll.printList();
     }
 }
