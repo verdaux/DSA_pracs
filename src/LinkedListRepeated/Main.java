@@ -9,6 +9,7 @@ public class Main
         //ll.printList();
         ll.append(2);
         ll.append(3);
+        ll.append(4);
         ll.printList();
         //ll.removeLast();
         //ll.printList();
@@ -23,11 +24,17 @@ public class Main
         ll.printList();
         ll.removeFirst();
         ll.printList();*/
+        /*
         System.out.println("The removed Node is:: "+ll.remove(0).value);
         ll.printList();
         System.out.println("The removed Node is:: "+ll.remove(0).value);
         ll.printList();
         System.out.println("The removed Node is:: "+ll.remove(0).value);
+        ll.printList();
+        */
+         //System.out.println("Fetched node at the index is :: "+ll.get(2).value);
+        //ll.reverse();
+        ll.set(8,0);
         ll.printList();
     }
 }

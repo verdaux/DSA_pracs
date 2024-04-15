@@ -185,4 +185,61 @@ public class LinkedList
         else
             return null;
     }
+
+    public Node get(int index)
+    {
+        if(index<0 || index>length)
+        {
+            System.out.println("The index provided was not found");
+            return null;
+        }
+        else if (index == 0)
+        {
+            return getHead();
+        }
+        else if (index == length-1)
+        {
+            return getTail();
+        }
+        else
+        {
+            Node temp=head;
+            for (int i = 0; i <= index-1;i++)
+            {
+                temp = temp.next;
+            }
+            return temp;
+        }
+    }
+
+    public void reverse()
+    {
+        Node temp = head;
+        head = tail;
+        tail = temp;
+
+        Node after = temp.next;
+        Node before = null;
+
+        for (int i =0; i < length; i++)
+        {
+            after = temp.next;
+            temp.next = before;
+            before = temp;
+            temp = after;
+        }
+    }
+
+    public void set(int value, int index)
+    {
+
+        Node temp = head;
+        for (int i=0; i <=index-1;i++)
+        {
+            temp = temp.next;
+        }
+
+        temp.value = value;
+
+    }
 }
