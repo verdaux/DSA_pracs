@@ -242,4 +242,21 @@ public class LinkedList
         temp.value = value;
 
     }
+
+    public Node midddleNode()
+    {
+        Node slow = head;
+        Node fast = head;
+
+        while (
+                fast != tail
+            ||
+                fast.next != tail
+        )
+        {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
 }
