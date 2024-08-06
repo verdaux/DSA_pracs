@@ -64,4 +64,24 @@ public class DoublyLinkedList
         tail = lastNode;
         length++;
     }
+
+    public Node removeLast()
+    {
+        Node nodeRemoved = tail;
+        if (length>1)
+        {
+
+            tail = tail.prev;
+            tail.next = null;
+            nodeRemoved.prev = null;
+            length--;
+        }
+        else if (length==1)
+        {
+            head = null;
+            tail = null;
+            length=0;
+        }
+        return nodeRemoved;
+    }
 }

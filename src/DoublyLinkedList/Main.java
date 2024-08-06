@@ -9,5 +9,8 @@ public class Main
         ll.append(3);
         ll.append(4);
         ll.printAll();
+
+        System.out.println("The removed node has value:: "+ll.removeLast().value);
+        ll.printAll();
     }
 }
