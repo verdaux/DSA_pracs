@@ -112,6 +112,7 @@ public class DoublyLinkedList
         {
             head = head.next;
             head.prev = null;
+            firstRemoveCandidate.next = null;
             length--;
         }
         else if (length==1)
@@ -121,5 +122,18 @@ public class DoublyLinkedList
             length=0;
         }
         return firstRemoveCandidate;
+    }
+
+    public Node get(int index)
+    {
+        Node currNode = head;
+        if (index>=0 && index < length)
+        {
+            for (int i = 0; i < index; i++)
+            {
+                currNode = currNode.next;
+            }
+        }
+        return currNode;
     }
 }
