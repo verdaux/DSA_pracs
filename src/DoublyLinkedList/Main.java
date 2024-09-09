@@ -9,9 +9,11 @@ public class Main
         ll.append(3);
         ll.append(4);
         ll.printAll();
-        System.out.println("fetched value:: "+ll.get(0).value);
+        ll.set(0,14);
+        ll.printAll();
+        /*System.out.println("fetched value:: "+ll.get(0).value);
         System.out.println("fetched value:: "+ll.get(1).value);
-        System.out.println("fetched value:: "+ll.get(2).value);
+        System.out.println("fetched value:: "+ll.get(2).value);*/
         /*System.out.println("The removed node has value:: "+ll.removeLast().value);
         ll.printAll();*/
 

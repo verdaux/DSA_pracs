@@ -129,11 +129,25 @@ public class DoublyLinkedList
         Node currNode = head;
         if (index>=0 && index < length)
         {
-            for (int i = 0; i < index; i++)
+            if (index<length/2)
+            {for (int i = 0; i < index; i++)
             {
                 currNode = currNode.next;
+            }}
+            else
+            {
+                currNode = tail;
+                for (int i = length-1; i > index;i--)
+                {
+                    currNode = currNode.prev;
+                }
             }
         }
         return currNode;
+    }
+
+    public void set(int index, int value)
+    {
+        get(index).value = value;
     }
 }
