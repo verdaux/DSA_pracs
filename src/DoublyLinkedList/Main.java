@@ -9,7 +9,8 @@ public class Main
         ll.append(3);
         ll.append(4);
         ll.printAll();
-        ll.set(0,14);
+        //ll.set(0,14);
+        ll.remove(1);
         ll.printAll();
         /*System.out.println("fetched value:: "+ll.get(0).value);
         System.out.println("fetched value:: "+ll.get(1).value);

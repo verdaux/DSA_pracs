@@ -150,4 +150,43 @@ public class DoublyLinkedList
     {
         get(index).value = value;
     }
+
+    public void insert(int index, int value)
+    {
+        Node curr = head;
+        if (index>0 && index<length)
+        {
+            for (int i =0;i < index;i++)
+            {
+                curr = curr.next;
+            }
+            Node newNode = new Node(value);
+            newNode.prev = curr;
+            newNode.next = curr.next;
+            curr.next = newNode;
+
+            //
+
+            length++;
+        }
+    }
+
+    public void remove(int index)
+    {
+        if (index>0 && index <=length)
+        {
+            Node currNode = head;
+            for (int i = 0; i < index; i++)
+            {
+                currNode = currNode.next;
+            }
+            Node before = currNode.prev;
+            Node after = currNode.next;
+            before.next = after;
+            after.prev = before;
+            currNode = null;
+
+            length--;
+        }
+    }
 }
