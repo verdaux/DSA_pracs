@@ -47,4 +47,39 @@ public class LinkedList
         System.out.println("Linked list values as follows::\n");
         printList();
     }
+
+    public void append(int value)
+    {
+        Node lastNode = new Node(value);
+        if(length>0)
+        {tail.next = lastNode;}
+        else
+        {
+            head = lastNode;
+        }
+        tail = lastNode;
+        length++;
+    }
+
+    public Node removeLast()
+    {
+        Node temp = head;
+        if (length>1)
+        {
+            while (temp.next.next != null)
+            {
+                temp = temp.next;
+            }
+            temp.next = null;
+            tail = temp;
+            length--;
+        }
+        else if (length==1)
+        {
+            head = null;
+            tail = null;
+            length = 0;
+        }
+        return temp;
+    }
 }
