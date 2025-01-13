@@ -82,4 +82,20 @@ public class LinkedList
         }
         return temp;
     }
+
+    public void prepend(int value)
+    {
+        Node headNode = new Node(value);
+        if (length==0)
+        {
+            head = headNode;
+            tail = headNode;
+        }
+        else
+        {
+            headNode.next = head;
+            head = headNode;
+        }
+        length++;
+    }
 }

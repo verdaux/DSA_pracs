@@ -6,10 +6,14 @@ public class Main
     {
         LinkedList ll = new LinkedList(1);
         ll.printAll();
-        ll.append(2);
+        ll.prepend(0);
+        ll.printAll();
+        ll.prepend(-1);
+        ll.printAll();
+        /*ll.append(2);
         ll.append(3);
         ll.printAll();
         ll.removeLast();
-        ll.printAll();
+        ll.printAll();*/
     }
 }
