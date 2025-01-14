@@ -105,6 +105,7 @@ public class LinkedList
         if(length>1)
         {
             head = head.next;
+            temp.next = null;
             length--;
         }
         else if (length==1)
