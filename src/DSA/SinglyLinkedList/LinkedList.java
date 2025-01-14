@@ -41,8 +41,8 @@ public class LinkedList
     public void printAll()
     {
         System.out.println("All the values for the linked list are as follows:: ");
-        System.out.println("head:: "+getHead().value);
-        System.out.println("tail:: "+getTail().value);
+        System.out.println("head:: "+(getHead()!=null?getHead().value:"is null"));
+        System.out.println("tail:: "+(getTail()!=null?getTail().value:"is null"));
         System.out.println("length:: "+getLength());
         System.out.println("Linked list values as follows::\n");
         printList();
@@ -97,5 +97,22 @@ public class LinkedList
             head = headNode;
         }
         length++;
+    }
+
+    public Node removeFirst()
+    {
+        Node temp = head;
+        if(length>1)
+        {
+            head = head.next;
+            length--;
+        }
+        else if (length==1)
+        {
+            head = null;
+            tail = null;
+            length = 0;
+        }
+        return temp;
     }
 }

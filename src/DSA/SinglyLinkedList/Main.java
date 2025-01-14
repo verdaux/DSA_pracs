@@ -10,6 +10,12 @@ public class Main
         ll.printAll();
         ll.prepend(-1);
         ll.printAll();
+        ll.removeFirst();
+        ll.printAll();
+        ll.removeFirst();
+        ll.printAll();
+        ll.removeFirst();
+        ll.printAll();
         /*ll.append(2);
         ll.append(3);
         ll.printAll();
