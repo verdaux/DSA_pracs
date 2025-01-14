@@ -116,4 +116,19 @@ public class LinkedList
         }
         return temp;
     }
+
+    public Node get(int index)
+    {
+        Node temp = head;
+        if (index>0 && index<length)
+        {
+            for (int i=0; i < index; i++)
+            {
+                temp = temp.next;
+            }
+        }
+        else
+            return null;
+        return temp;
+    }
 }
