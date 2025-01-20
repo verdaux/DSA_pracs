@@ -120,7 +120,7 @@ public class LinkedList
     public Node get(int index)
     {
         Node temp = head;
-        if (index>0 && index<length)
+        if (index>=0 && index<length)
         {
             for (int i=0; i < index; i++)
             {
@@ -130,5 +130,19 @@ public class LinkedList
         else
             return null;
         return temp;
+    }
+
+    public void set(int index, int value)
+    {
+        Node temp = head;
+        if (index >=0 && index<length)
+        {
+            for (int curr = 0; curr < index; curr++)
+            {
+                temp = temp.next;
+            }
+            System.out.println("value of curr node is:: "+temp.value);
+            temp.value = value;
+        }
     }
 }
