@@ -6,14 +6,14 @@ public class Main
     {
         LinkedList ll = new LinkedList(1);
 
-        ll.prepend(0);
+        /*ll.prepend(0);
 
         ll.append(2);
-        ll.append(3);
+        ll.append(3);*/
 
         ll.printAll();
 
-        ll.set(2,-16);
+       ll.insert(0,-15);
         ll.printAll();
         /*ll.append(2);
         ll.append(3);

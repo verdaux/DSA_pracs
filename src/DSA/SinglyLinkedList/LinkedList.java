@@ -145,4 +145,36 @@ public class LinkedList
             temp.value = value;
         }
     }
+
+    public void insert(int index, int value)
+    {
+
+        if (index>=0 && index < length)
+        {
+            Node newNode = new Node(value);
+            Node temp = head;
+            if(index==0)
+            {
+                //call append
+                newNode.next = head;
+                head = newNode;
+            }
+            else if (index==length-1)
+            {
+                //call prepend
+                tail.next = newNode;
+                tail = newNode;
+            }
+            else
+            {
+                for (int curr = 0; curr < index - 1; curr++)
+                {
+                    temp = temp.next;
+                }
+                newNode.next = temp.next;
+                temp.next = newNode;
+            }
+            length++;
+        }
+    }
 }
