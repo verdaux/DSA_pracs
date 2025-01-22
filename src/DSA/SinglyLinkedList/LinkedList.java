@@ -177,4 +177,51 @@ public class LinkedList
             length++;
         }
     }
+
+    public Node removeAny(int index)
+    {
+        Node curr = head;
+        if (length==0)
+        {
+            return null;
+        }
+        else if (length==1)
+        {
+            head=null;
+            length=0;
+            return curr;
+        }
+        else if (index==0)
+        {
+            //remove first
+            head = head.next;
+            length--;
+            return curr;
+        }
+        else if (index==length-1)
+        {
+            while (curr.next!=tail)
+            {
+                curr = curr.next;
+            }
+            tail = curr;
+            tail.next = null;
+            length--;
+        }
+        else if (index>0 && index<length-1)
+        {
+            Node prev = head;
+            curr = prev.next;
+            for (int currentIndex=0;currentIndex<index-1;currentIndex++)
+            {
+                prev = curr;
+                curr = curr.next;
+            }
+            prev.next = curr.next;
+            curr.next = null;
+            length--;
+            return curr;
+        }
+         return null;
+    }
 }
