@@ -224,4 +224,24 @@ public class LinkedList
         }
          return null;
     }
+
+    public void reverse()
+    {
+        //swap head and tail
+        Node temp = head;
+        head = tail;
+        tail = temp;
+
+        //reversing the pointers
+        Node before = null;
+        Node after = temp.next;
+        for (int i = 0; i < length; i++)
+        {
+            after = temp.next;
+            temp.next = before;
+            before = temp;
+            temp = after;
+
+        }
+    }
 }

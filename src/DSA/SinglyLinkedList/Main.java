@@ -14,7 +14,7 @@ public class Main
         ll.printAll();
 
        //l.insert(0,-15);
-        ll.removeAny(3);
+        ll.reverse();
         ll.printAll();
         /*ll.append(2);
         ll.append(3);
