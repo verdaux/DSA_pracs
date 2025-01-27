@@ -234,7 +234,7 @@ public class LinkedList
 
         //reversing the pointers
         Node before = null;
-        Node after = temp.next;
+        Node after;
         for (int i = 0; i < length; i++)
         {
             after = temp.next;
@@ -243,5 +243,21 @@ public class LinkedList
             temp = after;
 
         }
+    }
+
+    public Node middleNode()
+    {
+        Node slow = head;
+        Node fast = head;
+        while (
+                fast!=null
+                &&
+                        fast.next!=null
+        )
+        {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
     }
 }

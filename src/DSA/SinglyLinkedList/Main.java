@@ -12,10 +12,10 @@ public class Main
         ll.append(3);
 
         ll.printAll();
-
+        System.out.println("The middle node is "+ll.middleNode().value);
        //l.insert(0,-15);
-        ll.reverse();
-        ll.printAll();
+       // ll.reverse();
+        //ll.printAll();
         /*ll.append(2);
         ll.append(3);
         ll.printAll();
