@@ -12,7 +12,9 @@ public class Main
         ll.append(3);
 
         ll.printAll();
-        System.out.println("The middle node is "+ll.middleNode().value);
+        int kth = 3;
+        System.out.println("The "+kth+" node from the end is "+ll.kthNodeFromEnd(kth).value);
+        //System.out.println("The middle node is "+ll.middleNode().value);
        //l.insert(0,-15);
        // ll.reverse();
         //ll.printAll();

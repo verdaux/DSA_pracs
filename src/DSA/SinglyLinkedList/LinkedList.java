@@ -260,4 +260,48 @@ public class LinkedList
         }
         return slow;
     }
+
+    public Node kthNodeFromEnd(int kthIndex)
+    {
+        Node slow = head;
+        Node fast = head;
+
+        for (int i = 0; i < kthIndex; i++)
+        {
+            if (fast==null)
+            {
+                return null;
+            }
+            fast = fast.next;
+        }
+
+        while (fast!=null)
+        {
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        return slow;
+    }
+
+    public boolean hasLoop()
+    {
+        Node slow = head;
+        Node fast = head;
+
+        while (
+                fast != null
+                &&
+                        fast.next!=null
+                )
+        {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }
