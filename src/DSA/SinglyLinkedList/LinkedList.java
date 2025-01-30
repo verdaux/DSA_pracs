@@ -304,4 +304,44 @@ public class LinkedList
         }
         return false;
     }
+
+    public void partitionList(int partitioner)
+    {
+        if (head==null)
+        {
+            return;
+        }
+        else
+        {
+            Node dummy1 = new Node(0);
+            Node dummy2 = new Node(0);
+
+            Node prev1 = dummy1;
+            Node prev2 = dummy2;
+
+            Node curr = head;
+
+            while (curr!=null)
+            {
+                if(curr.value < partitioner)
+                {
+                    prev1.next = curr;
+                    prev1 = curr;
+                }
+                else
+                {
+                    prev2.next = curr;
+                    prev2 = curr;
+                }
+                curr = curr.next;
+            }
+
+            prev2.next = null;
+            prev1.next = dummy2.next;
+            head = dummy1.next;
+        }
+
+    }
+
+
 }
