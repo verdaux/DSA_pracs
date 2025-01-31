@@ -1,5 +1,8 @@
 package DSA.SinglyLinkedList;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class LinkedList
 {
     Node head;
@@ -340,7 +343,54 @@ public class LinkedList
             prev1.next = dummy2.next;
             head = dummy1.next;
         }
+    }
 
+    public void removeDupesWithSet()
+    {
+        Set<Integer> uniqueNums = new HashSet<>();
+
+        Node prev = null;
+        Node curr = head;
+
+        while (curr!=null)
+        {
+            if (uniqueNums.contains(curr.value))
+            {
+                prev.next = curr.next;
+                length--;
+            }
+            else
+            {
+                uniqueNums.add(curr.value);
+                prev = curr;
+            }
+            curr = curr.next;
+        }
+
+    }
+
+    public void removeDupesWithoutAnyDS()
+    {
+        Node current = head;
+
+        while (current!=null)
+        {
+            Node runner = current;
+            while (runner.next!=null)
+            {
+                if (runner.next.value == current.value)
+                {
+                    runner.next = runner.next.next;
+                    length--;
+                }
+                else
+                {
+                    runner = runner.next;
+                }
+
+            }
+            current = current.next;
+        }
     }
 
 

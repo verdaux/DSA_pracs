@@ -14,8 +14,9 @@ public class Main
         ll.append(2);
 
         ll.printAll();
-        ll.partitionList(3);
-        System.out.println("After partition");
+        //ll.partitionList(3);
+        //System.out.println("After partition");
+        ll.removeDupesWithSet();
         ll.printAll();
 
         //int kth = 3;
