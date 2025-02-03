@@ -393,5 +393,16 @@ public class LinkedList
         }
     }
 
+    public int binaryToDecimal()
+    {
+        int num = 0;
+        Node curr = head;
 
+        while (curr!= null)
+        {
+            num = num * 2+ curr.value;
+            curr = curr.next;
+        }
+        return num;
+    }
 }
