@@ -264,6 +264,24 @@ public class LinkedList
         return slow;
     }
 
+    public Node kthNodeFromEndNew(int kthIndex)
+    {
+        Node fast = head;
+
+        for (int curr = 0; curr < kthIndex; curr++)
+        {
+            if (fast==null) return null;
+            fast = fast.next;
+        }
+        Node slow = head;
+        while (fast!= null)
+        {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return  slow;
+    }
+
     public Node kthNodeFromEnd(int kthIndex)
     {
         Node slow = head;
@@ -345,6 +363,29 @@ public class LinkedList
         }
     }
 
+    public void removeDupesWIthADS()
+    {
+        Node current = head;
+        while (current!=null)
+        {
+            Node runner = current;
+            while (runner.next!=null)
+            {
+                if (runner.next.value == current.value)
+                {
+                    runner.next = runner.next.next;
+                    length--;
+                }
+                else
+                {
+                    runner = runner.next;
+                }
+            }
+            current = current.next;
+        }
+    }
+
+
     public void removeDupesWithSet()
     {
         Set<Integer> uniqueNums = new HashSet<>();
@@ -404,5 +445,29 @@ public class LinkedList
             curr = curr.next;
         }
         return num;
+    }
+
+    public void reverseBetween(int startIndex, int endIndex)
+    {
+        Node dummy = new Node(0);
+        dummy.next = head;
+
+        Node prev = dummy;
+
+        for (int i = 0; i < startIndex; i++)
+        {
+            prev = prev.next;
+        }
+        Node curr = prev.next;
+
+        for (int i = 0; i < endIndex - startIndex; i++)
+        {
+            Node toMove = curr.next;
+            curr.next = toMove.next;
+            toMove.next = prev.next;
+            prev.next = toMove;
+        }
+
+        head = dummy.next;
     }
 }
